@@ -1,0 +1,70 @@
+{
+	"compiler": {
+		"version": "0.8.12+commit.f00d7308"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "fungi",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "dna",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/FungusFactory.sol": "FungusFactory"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/FungusFactory.sol": {
+			"keccak256": "0xa51c07705bf976854db6bd23a91495b70af3f639f1d9842b78558871e636367d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7c56fd86f4e0bdfb65a63f7978d82b7fb0e37f3decbf0ac44699012c17eecf09",
+				"dweb:/ipfs/QmVvCkyUwj57x31D2oyvvNjK3rXdm4T6cyzo3abU1DPc9e"
+			]
+		}
+	},
+	"version": 1
+}
