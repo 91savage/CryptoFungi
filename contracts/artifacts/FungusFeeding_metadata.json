@@ -119,7 +119,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/FungusFactory.sol": "FungusFactory"
+			"contracts/FungusFactory.sol": "FungusFeeding"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -133,28 +133,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"@openzeppelin/contracts/access/Ownable.sol": {
-			"keccak256": "0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://40fb1b5102468f783961d0af743f91b9980cf66b50d1d12009f6bb1869cea4d2",
-				"dweb:/ipfs/QmYqEbJML4jB1GHbzD4cUZDtJg5wVwNm3vDJq1GbyDus8y"
-			]
-		},
-		"@openzeppelin/contracts/utils/Context.sol": {
-			"keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
-				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
-			]
-		},
 		"contracts/FungusFactory.sol": {
-			"keccak256": "0xd46a876d0096a62c066fac6d4b5f273d40dbd89359fb92b4783fcb5de872c843",
+			"keccak256": "0x6d173600d5d4be5cf0e80a24481d761d60b327113705b7ff51fdf9ee6c2bb29e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://36647e09807c133bf1de66bb57a6005702bd1de5078f77ec5259182cd126b746",
-				"dweb:/ipfs/QmRx4y2VY6uBzLCsS6qUbkC4RVxvRuzTUaDP3znRwGcNGF"
+				"bzz-raw://ba64170ec2477e56b9d4693456173ef6a54d66b09631465e3d41e65ffdcc52e8",
+				"dweb:/ipfs/QmU49mPY2Ruy34BkoojwkjKYEL2beE7ARCZXaiusovcYov"
 			]
 		}
 	},
