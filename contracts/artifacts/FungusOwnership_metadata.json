@@ -9,6 +9,31 @@
 				"anonymous": false,
 				"inputs": [
 					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "approved",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "Approval",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
 						"indexed": false,
 						"internalType": "uint256",
 						"name": "fungusId",
@@ -48,6 +73,68 @@
 				],
 				"name": "OwnershipTransferred",
 				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "approveToken",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "balance",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			},
 			{
 				"inputs": [
@@ -180,6 +267,25 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "ownerOf",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "renounceOwnership",
 				"outputs": [],
@@ -195,6 +301,29 @@
 					}
 				],
 				"name": "setFeedFactoryContractAddress",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -236,7 +365,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/FungusFeeding.sol": "FungusFeeding"
+			"contracts/FungusOwnership.sol": "FungusOwnership"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -280,6 +409,14 @@
 			"urls": [
 				"bzz-raw://8b957ae1e86caf86ead8b28a40f5c53e67acb84e776199ad5a137befc8022fdd",
 				"dweb:/ipfs/Qmewk3d9BezLGcfYzzZQdSKPLspuyKt2Wspk75o9faWEez"
+			]
+		},
+		"contracts/FungusOwnership.sol": {
+			"keccak256": "0x2901a2381055d82445243b852cfdfc226459a3520206b0174d1f35a7156db48b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4d16789163f6f890554cd7a5b73de4ea6cd3f27709e94ac4dbde08dd5a6fb091",
+				"dweb:/ipfs/QmfUXNUboNuzYjeLi3NytVeVsNUv5Z7K9yaZK1yspDd7xm"
 			]
 		}
 	},

@@ -11,23 +11,42 @@
 					{
 						"indexed": false,
 						"internalType": "uint256",
-						"name": "",
+						"name": "fungusId",
 						"type": "uint256"
 					},
 					{
 						"indexed": false,
 						"internalType": "string",
-						"name": "",
+						"name": "name",
 						"type": "string"
 					},
 					{
 						"indexed": false,
 						"internalType": "uint256",
-						"name": "",
+						"name": "dna",
 						"type": "uint256"
 					}
 				],
-				"name": "newFungus",
+				"name": "NewFungus",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
 				"type": "event"
 			},
 			{
@@ -38,7 +57,7 @@
 						"type": "string"
 					}
 				],
-				"name": "createFungus",
+				"name": "createRandomFungus",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -62,6 +81,11 @@
 						"internalType": "uint256",
 						"name": "dna",
 						"type": "uint256"
+					},
+					{
+						"internalType": "uint32",
+						"name": "readyTime",
+						"type": "uint32"
 					}
 				],
 				"stateMutability": "view",
@@ -90,6 +114,38 @@
 				"inputs": [
 					{
 						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "getFungiByOwner",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
 						"name": "",
 						"type": "address"
 					}
@@ -104,11 +160,41 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
 			"kind": "dev",
-			"methods": {},
+			"methods": {
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
 			"version": 1
 		},
 		"userdoc": {
@@ -150,11 +236,11 @@
 			]
 		},
 		"contracts/FungusFactory.sol": {
-			"keccak256": "0xd46a876d0096a62c066fac6d4b5f273d40dbd89359fb92b4783fcb5de872c843",
+			"keccak256": "0x8fda5e47a5c77133ee5c1532cae9941f95f38e9dcf251bf948dfead4eb1d6a19",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://36647e09807c133bf1de66bb57a6005702bd1de5078f77ec5259182cd126b746",
-				"dweb:/ipfs/QmRx4y2VY6uBzLCsS6qUbkC4RVxvRuzTUaDP3znRwGcNGF"
+				"bzz-raw://0b4b0467f6ad10a5776cb11c91dd048b324414bb0a60f85ac2507a8ad66275e6",
+				"dweb:/ipfs/QmaWtspJWFZuYKc8ozBrQecdK1eQvuFBJpsJa7ENrxEU2G"
 			]
 		}
 	},

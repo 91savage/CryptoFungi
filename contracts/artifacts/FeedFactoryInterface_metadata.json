@@ -1,0 +1,99 @@
+{
+	"compiler": {
+		"version": "0.8.12+commit.f00d7308"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getFeed",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "dna",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/FungusFeeding.sol": "FeedFactoryInterface"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://40fb1b5102468f783961d0af743f91b9980cf66b50d1d12009f6bb1869cea4d2",
+				"dweb:/ipfs/QmYqEbJML4jB1GHbzD4cUZDtJg5wVwNm3vDJq1GbyDus8y"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
+				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+			]
+		},
+		"contracts/FungusFactory.sol": {
+			"keccak256": "0x8fda5e47a5c77133ee5c1532cae9941f95f38e9dcf251bf948dfead4eb1d6a19",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0b4b0467f6ad10a5776cb11c91dd048b324414bb0a60f85ac2507a8ad66275e6",
+				"dweb:/ipfs/QmaWtspJWFZuYKc8ozBrQecdK1eQvuFBJpsJa7ENrxEU2G"
+			]
+		},
+		"contracts/FungusFeeding.sol": {
+			"keccak256": "0x9fc84c7fdd147176b3f8730e38620a84f56d7a2dcf923f06cdb75800fb5fc8cd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8b957ae1e86caf86ead8b28a40f5c53e67acb84e776199ad5a137befc8022fdd",
+				"dweb:/ipfs/Qmewk3d9BezLGcfYzzZQdSKPLspuyKt2Wspk75o9faWEez"
+			]
+		}
+	},
+	"version": 1
+}

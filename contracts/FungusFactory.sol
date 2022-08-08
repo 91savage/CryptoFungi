@@ -3,9 +3,11 @@ pragma solidity ^0.8.12;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract FungusFactory {
+contract FungusFactory is Ownable {
 
+    event NewFungus(uint fungusId, string name, uint dna);
 
+    // RED: 3, GREEN: 3, BLUE: 3, ALPHA: 3, Species: 2
     uint dnaDigits = 14;
     uint dnaModulus = 10 ** dnaDigits;
     uint cooldownTime = 1 minutes;
@@ -16,34 +18,42 @@ contract FungusFactory {
         uint32 readyTime;
     }
 
-    Fungus[] public fungi; //자료형 접근제어자 
+    Fungus[] public fungi;
 
-    mapping (uint => address) public fungusToOwner;  // ID를 넣으면 주소가 나오게 함
-    mapping (address => uint) public ownerFungusCount; // address가 몇 개의 fungi를 가지고 있는지
+    mapping (uint => address) public fungusToOwner;
+    mapping (address => uint) public ownerFungusCount;
 
-    event newFungus(uint, string, uint);
-
-    function _createFungus(string memory name, uint dna, uint32 readyTime) internal {
-        fungi.push(Fungus(name, dna, uint32(block.timestamp + readyTime)));
-        uint id = fungi.length -1;
+    function _createFungus(string memory name, uint dna) internal {
+        fungi.push(Fungus(name, dna, uint32(block.timestamp + cooldownTime)));
+        uint id = fungi.length - 1;
         fungusToOwner[id] = msg.sender;
         ownerFungusCount[msg.sender]++;
-        emit newFungus(id, name, dna);
+        emit NewFungus(id, name, dna);
     }
 
-    function _generateRandomData(string calldata _str) private view returns(uint) {
+    function _generateRandomDna(string calldata _str) private view returns (uint) {
         uint rand = uint(keccak256(bytes(_str)));
         uint dna = rand % dnaModulus;
         dna = dna - dna % 100;
         return dna;
-
     }
 
-    function createFungus(string calldata name) public {
-        require(ownerFungusCount[msg.sender] == 0, "A fungus already exist.");
-        uint randDna = _generateRandomData(name);
-        _createFungus(name,randDna);
+    function createRandomFungus(string calldata name) public {
+        require(ownerFungusCount[msg.sender] == 0, "a fungus already exists");
+        uint randDna = _generateRandomDna(name);
+        _createFungus(name, randDna);
     }
 
+    function getFungiByOwner(address owner) external view returns(uint[] memory) {
+        uint[] memory result = new uint[](ownerFungusCount[owner]);
+
+        uint counter = 0;
+        for (uint i = 0; i < fungi.length; i++) {
+            if (fungusToOwner[i] == owner) {
+                result[counter] = i;
+                counter++;
+            }
+        }
+        return result;
+    }
 }
-
